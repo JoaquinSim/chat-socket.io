@@ -1,0 +1,35 @@
+
+<div class="p-2 d-flex justify-content-around">
+    <div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </div>
+    <div class="card border-info mb-3">
+        <div class="card-header">
+            YaviChat
+        </div>
+        <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <p *ngFor="let message of messages">{{message}}</p>
+                <div class="input-group mb-3 d-flex align-items-end">
+                    <input ngModel type="text" class="form-control" placeholder="Escribir mensaje" aria-label="Escribir mensaje" aria-describedby="basic-addon2" name="message" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-success" type="submit">Enviar</button>
+                    </div>
+                  </div>
+            </form>
+        </div>
+
+    </div>
+    <div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Usuarios en linea</li>
+            <p class="d-flex justify-content-center"><span class="circle"></span>5</p>
+        </ul>
+    </div>
+</div>
