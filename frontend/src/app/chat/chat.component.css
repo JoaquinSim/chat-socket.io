@@ -1,10 +1,12 @@
-.d-flex{
+.a {
     height: 40rem;
 }
-.card{
+
+.card {
     width: 60rem;
 }
-.circle{
+
+.circle {
     background-color: green;
     width: 15px;
     height: 15px;
@@ -13,6 +15,58 @@
     left: -5px;
     border-radius: 100px;
 }
-.input-group{
-height:33rem;
+
+.input-group {
+    position: fixed;
+    top: 85%;
+    width: 70%;
+    left: 16.5%;
 }
+
+.mensaje {
+    background-color: rgb(192, 227, 235);
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 50%;
+}
+.check-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    left: 85%;
+  }
+  
+  .check-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 12px;
+    border-bottom: 2px solid green;
+    border-right: 2px solid green;
+  }
+  
+
+@media only screen and (max-width: 320px) {
+    .lista {
+      display: none;
+    }
+    .a{
+        height: 95vh;
+    }
+    .userL{
+        display: none;
+    }
+    .mensaje{
+        width: 100%;
+        margin-left: 1%;
+    }
+    
+  }

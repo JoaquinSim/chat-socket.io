@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ChatService } from '../services/chat.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-chat',
@@ -8,16 +9,24 @@ import { ChatService } from '../services/chat.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit{
-  //newMessage$: Observable<string>;
+  @ViewChild('form') form: NgForm | any;
+  newMessage$: Observable<string> | any;
   messages: string[] =[];
 
   constructor(private chatService: ChatService){
 
   }
-  ngOnInit() {
+  ngOnInit() { 
     return this.chatService.getNewMessage().subscribe((message: string)=>{
       this.messages.push(message);
     })
+   
   }
-  onSubmit(){}
+  onSubmit(){
+    const {message} = this.form.value;
+    console.log('Desde componente: '+ message);    
+    if(!message) return;
+    this.chatService.sendMessage(message);
+    this.form.reset();
+  }
 }

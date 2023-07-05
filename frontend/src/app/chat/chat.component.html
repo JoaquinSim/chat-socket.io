@@ -1,6 +1,6 @@
 
-<div class="p-2 d-flex justify-content-around">
-    <div>
+<div class="p-2 d-flex justify-content-around a">
+    <div class="lista">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -14,19 +14,19 @@
             YaviChat
         </div>
         <div class="card-body">
-            <form #form="ngForm" (ngSubmit)="onSubmit()">
-                <p *ngFor="let message of messages">{{message}}</p>
-                <div class="input-group mb-3 d-flex align-items-end">
+            <p class="mensaje" *ngFor="let message of messages"> - {{message}} <span class="check-icon"></span></p>
+            <form #form="ngForm" (ngSubmit)="onSubmit()" class="d-flex ">
+                <div class="input-group ">
                     <input ngModel type="text" class="form-control" placeholder="Escribir mensaje" aria-label="Escribir mensaje" aria-describedby="basic-addon2" name="message" required>
                     <div class="input-group-append">
-                      <button class="btn btn-outline-success" type="submit">Enviar</button>
+                      <button  [disabled]="!form.valid" class="btn btn-outline-success" type="submit">Enviar</button>
                     </div>
                   </div>
             </form>
         </div>
 
     </div>
-    <div>
+    <div class="userL">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Usuarios en linea</li>
             <p class="d-flex justify-content-center"><span class="circle"></span>5</p>

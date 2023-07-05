@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 
 
 const config: SocketIoConfig = {
-   url: 'http://192.168.1.3:3000',
+  //cuando este en red cambiar local host a la direcion ip local
+   url: 'http://localhost:3000',
    options:{
     transports:['polling', 'websocket']
    }
